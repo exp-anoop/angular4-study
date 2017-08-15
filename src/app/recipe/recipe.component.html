@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul>
+                <li *ngFor="let item of list" (click)="onSelect(item)">{{ item.name }} ({{ item.quatity }}) - {{ item.description }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" *ngIf="recipie">
+        <div class="col-sm-12">
+            <app-recipe-item [recipe]="recipie" (onDelete)="onDeleted($event)"></app-recipe-item>
+        </div>
+    </div>
+</div>
