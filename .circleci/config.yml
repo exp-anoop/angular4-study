@@ -21,8 +21,9 @@ jobs:
       - run:
           name: Update npm
           command: |
+            sudo apt-get update
             sudo npm install -g npm@latest
-            sudo apt-get install awscli
+            sudo apt-get install -y awscli
 
       # Download and cache dependencies
       - restore_cache:
@@ -44,4 +45,4 @@ jobs:
 
       - run:
           name: Deploy to S3
-          command: aws s3 sync dist s3://circle-ci-demo --delete --acl public-read 
+          command: aws s3 sync dist s3://circle-ci-demo --delete
