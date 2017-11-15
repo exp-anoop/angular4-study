@@ -39,4 +39,7 @@ jobs:
       - run:
           name: Build angular CLI production
           command: 'yarn run build:prod'
-      
+
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync dist s3://circle-ci-demo --delete --acl public-read 
