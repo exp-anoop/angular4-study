@@ -19,9 +19,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update npm and install angular CLI
-          command: 'sudo npm install -g npm@latest angular-cli@latest'
-          
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -35,9 +35,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      - run: yarn test
       
       - run:
           name: Build angular CLI production
