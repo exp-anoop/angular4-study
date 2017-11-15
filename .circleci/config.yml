@@ -38,5 +38,5 @@ jobs:
       
       - run:
           name: Build angular CLI production
-          command: 'ng build --prod --aot'
+          command: 'yarn run build:prod'
       
