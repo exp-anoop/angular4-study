@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
-          
+      - run: sudo npm i process-nextick-args util-deprecate
       - run:
           name: Install Angular CLI
           command: 'sudo npm install angular-cli@latest -g'
