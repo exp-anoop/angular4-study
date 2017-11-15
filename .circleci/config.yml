@@ -22,6 +22,7 @@ jobs:
           name: Update npm
           command: |
             sudo npm install -g npm@latest
+            sudo apt-get install python-pip
             sudo pip install awscli
 
       # Download and cache dependencies
