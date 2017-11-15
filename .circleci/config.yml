@@ -20,7 +20,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: 'sudo npm install -g npm@latest'
+          command: |
+            sudo npm install -g npm@latest
+            apt-get install awscli
 
       # Download and cache dependencies
       - restore_cache:
