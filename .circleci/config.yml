@@ -21,9 +21,8 @@ jobs:
       - run:
           name: Update npm
           command: |
-            sudo apt-get update
             sudo npm install -g npm@latest
-            sudo apt-get install -y awscli
+            sudo pip install awscli
 
       # Download and cache dependencies
       - restore_cache:
@@ -47,6 +46,6 @@ jobs:
           name: Deploy Master to S3
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync dist s3://circle-ci-demo --acl public-read --region eu-west-2
+              aws s3 sync dist s3://circle-ci-demo --delete --acl public-read --region eu-west-2
             fi
             
