@@ -19,12 +19,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update npm
-          command: 'sudo npm install -g npm@latest'
-      - run: sudo npm i process-nextick-args util-deprecate
-      - run:
-          name: Install Angular CLI
-          command: 'sudo npm install angular-cli@latest -g'
+          name: Update npm and install angular CLI
+          command: 'sudo npm install -g npm@latest angular-cli@latest'
+          
       # Download and cache dependencies
       - restore_cache:
           keys:
