@@ -47,6 +47,6 @@ jobs:
           name: Deploy Master to S3
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync dist s3://circle-ci-demo --acl public-read --region eu-west-2a
+              aws s3 sync dist s3://circle-ci-demo --acl public-read --region eu-west-2
             fi
             
