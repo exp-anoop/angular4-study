@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeComponent implements OnInit {
     list = [
-        {name: "Apple", description: "Nice Apple", quatity: 12},
-        {name: "Orange", description: "Nice Orange", quatity: 12},
-        {name: "Tomatto", description: "Nice Tomattoo", quatity: 12}
+        {name: 'Apple', description: 'Nice Apple', quatity: 12},
+        {name: 'Orange', description: 'Nice Orange', quatity: 12},
+        {name: 'Tomatto', description: 'Nice Tomattoo', quatity: 12}
     ];
     recipie: {name: string, description: string, quatity: number};
 
