@@ -21,9 +21,7 @@ jobs:
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
-      - run:
-          name: Typescript Installation
-          command: 'sudo npm install -g typescript'
+          
       - run:
           name: Install Angular CLI
           command: 'sudo npm install angular-cli@latest -g'
