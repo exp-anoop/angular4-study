@@ -22,8 +22,11 @@ jobs:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
       - run:
+          name: Typescript Installation
+          command: 'sudo npm install -g typescript'
+      - run:
           name: Install Angular CLI
-          command: 'npm install angular-cli@latest -g'
+          command: 'sudo npm install angular-cli@latest -g'
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -45,5 +48,3 @@ jobs:
           name: Build angular CLI production
           command: 'ng build --prod --aot'
       
-
-
