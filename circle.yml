@@ -6,13 +6,7 @@ machine:
     node:
         version: 7.10
     post:
-      - sudo apt-get install build-essential libssl-dev libffi-dev python-dev
-      - sudo apt-get install python-pip
       - sudo pip install awscli
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
 dependencies:
   override:
     - npm install
