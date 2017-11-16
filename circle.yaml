@@ -15,6 +15,9 @@ dependencies:
 compile:
   override:
     - npm run build:prod 
+test: 
+  override: 
+    - npm run test
 deployment:
   production:
     branch: master
