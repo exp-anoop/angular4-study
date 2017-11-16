@@ -1,14 +1,12 @@
+general:
+  branches:
+    only:
+      - master # list of branches to build
 machine:
     node:
-        version: 6.9
+        version: 7.10
     post:
-      - sudo apt-get install build-essential libssl-dev libffi-dev python-dev
-      - sudo apt-get install python-pip
       - sudo pip install awscli
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
 dependencies:
   override:
     - npm install
@@ -19,7 +17,7 @@ test:
   override: 
     - npm run test
 deployment:
-  production:
+  prod:
     branch: master
     commands:
       - aws s3 sync dist s3://circle-ci-demo --delete --acl public-read --region eu-west-2
