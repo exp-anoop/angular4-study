@@ -1,6 +1,6 @@
 machine:
     node:
-        version: 6.9
+        version: 7.10
     post:
       - sudo apt-get install build-essential libssl-dev libffi-dev python-dev
       - sudo apt-get install python-pip
@@ -15,9 +15,6 @@ dependencies:
 compile:
   override:
     - npm run build:prod 
-test: 
-  override: 
-    - npm run test
 deployment:
   production:
     branch: master
